@@ -148,7 +148,10 @@ public abstract class EmployeeEntity implements Comparable<EmployeeEntity> {
 	@Override
 	public int compareTo(EmployeeEntity o) {
 		if (this.calSalaryNet().compareTo(o.calSalaryNet()) == 0) {
-			return this.birthDay.compareTo(o.birthDay);
+			int x = Integer.parseInt(this.getBirthDay().toString().split("-")[2]);
+			int y = Integer.parseInt(o.getBirthDay().toString().split("-")[2]);
+			if (x > y)
+				return -1;
 		}
 		return this.calSalaryNet().compareTo(o.calSalaryNet());
 	}

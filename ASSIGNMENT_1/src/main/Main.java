@@ -9,7 +9,9 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 		employeeService.insertDataFromTxtFile();
+		System.out.println("Insert thanh cong");
 		employeeService.updateDataToDB();
+		System.out.println("Update db thanh cong");
 
 		try {
 			employeeService.updateDataToDB();
@@ -17,6 +19,7 @@ public class Main {
 			System.out.println(e.getMessage());
 		}
 		employeeService.showLast();
+		System.out.println("Update saralry and show infor employee");
 	}
 
 }
